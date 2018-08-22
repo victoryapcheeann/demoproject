@@ -1,4 +1,9 @@
-.wtf{
-  width: 200px;
-  height: 200px;
+.columnStyle {
+  display: flex;
+  flex-direction: column;
+}
+
+.rowStyle {
+  display: flex;
+  flex-direction: row;
 }

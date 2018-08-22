@@ -1,4 +1,3 @@
-
 window.addEventListener("load", windowLoadHandler, false);
 var sphereRad = 75;
 var radius_sp=0.5;

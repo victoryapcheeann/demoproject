@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './LogoAnimation';
 
 class App extends Component {
-   componentDidMount() {
-   }
-
   render() {
     return (
         <div>
