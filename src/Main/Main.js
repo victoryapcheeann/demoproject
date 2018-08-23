@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Logo from '../Logo/Logo';
 import './Main.css';
 import './MainAnimation';
-import PlayerReserveList from '../PlayerReserveList/PlayerReserveList';
+import PlayerReserveList from '../PlayerCard/PlayerCard';
 
 class Main extends Component {
   render() {
