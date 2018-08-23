@@ -9,13 +9,16 @@ class Main extends Component {
     return (
     <div>
         <canvas id = "canvasTwo" class="particleContainer"></canvas>
-        <div className="rowStyle">
-            <Logo />
-            <div className = "moon-text">Victor Yap<br/>
-                <span className = "nep-highlight">FIFA FANTASY</span>
+        <div className="mainContainer columnStyle">
+            <div className="headerStyle rowStyle">
+                <Logo />
+                <div className = "headertext">Victor Yap<br/>
+                    <span className = "nep-highlight">FIFA FANTASY</span>
+                </div>
             </div>
+            <PlayerReserveList/> 
         </div>
-        <PlayerReserveList /> 
+        
     </div>
     );
   }

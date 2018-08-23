@@ -16,7 +16,7 @@ function windowLoadHandler() {
     backgroundAnimation();
 }
 
-function backgroundAnimation (particleSize = 2, particleCount = 200, W = window.innerWidth, H = window.innerHeight) {
+function backgroundAnimation (particleSize = 2, particleCount = 600, W = window.innerWidth, H = window.innerHeight) {
 
     var W, H, canvas, ctx, particles = [];
     

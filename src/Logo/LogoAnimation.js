@@ -1,6 +1,6 @@
 window.addEventListener("load", windowLoadHandler, false);
-var sphereRad = 75;
-var radius_sp=0.5;
+var sphereRad = 175;
+var radius_sp=0.3;
 //for debug messages
 var Debugger = function() { };
 Debugger.log = function(message) {

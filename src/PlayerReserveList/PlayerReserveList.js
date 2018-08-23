@@ -5,15 +5,16 @@ class PlayerReserveList extends Component {
   render() {
     return (
         <div className = "playerContainer">
-          <div className= "rowStyle">
+          <div className= "columnStyle">
             <img src="./player1.jpg" className="playerImage"/>
             <div className = "playerDescriptionContainer">
-              <div className="rowStyle">
+              <span className = "playerTitleContainer">
                 <span>ronaldo</span>
-                <img src="./country1.jpg" className="countryImage"/>
-              </div>
+                <span>Juventus</span>
+              </span>
               <div className="horizontalLine"></div>
-              <div>striker</div>
+              <span>Fantasy Role</span>
+              <span>striker</span>
             </div>
           </div>
           <button className="addButton">
