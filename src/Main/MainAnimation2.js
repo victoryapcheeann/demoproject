@@ -16,14 +16,14 @@ function windowLoadHandler() {
     backgroundAnimation();
 }
 
-function backgroundAnimation (particleSize = 3, particleCount = 500, W = window.innerWidth, H = window.innerHeight) {
+function backgroundAnimation (particleSize = 2, particleCount = 600, W = window.innerWidth, H = window.innerHeight) {
 
     var W, H, canvas, ctx, particles = [];
     
         W = W
         H = H
         
-    canvas = document.getElementById("canvasTwo");
+    canvas = document.getElementById("canvasThree");
         canvas.width = W;
         canvas.height = H;
     
