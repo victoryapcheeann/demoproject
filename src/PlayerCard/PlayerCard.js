@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './PlayerCard.css';
 import PlayerRadarChart from '../PlayerRadarChart/PlayerRadarChart';
+import GIFButton from '../GIFButton/GIFButton'
 
 class PlayerCard extends Component {
   render() {
@@ -24,11 +25,16 @@ class PlayerCard extends Component {
                  <span className="playerDescriptionDetails">striker</span>
                 </span>
               <div className="horizontalLine"></div>
-            </div>      
+            </div>     
             <PlayerRadarChart />
+            <div className="gifContainer">
+                <div className="playerSpecialMoveText">Special Move</div>
+                <GIFButton/>
+              </div>
             <button className="addButton">
                 <span>Add player</span>
             </button>
+             
           </div>
         </div>
     );

@@ -1,0 +1,109 @@
+.Project {
+  position: relative;
+  margin-left: 20px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+.Project:hover .imgMasked {
+  -webkit-clip-path: circle(100px at center);
+          clip-path: circle(100px at center);
+}
+.Project:hover .Project-hail {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+.Project:hover .Project-hail2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  border: 80px solid #fff4e6;
+  opacity: 0;
+}
+.Project:hover .Project-name {
+  left: 200%;
+  opacity: 1;
+}
+.Project:hover .Project-name:before {
+  width: 100%;
+}
+.Project-hail {
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  transition: 0.5s;
+  opacity: 0.2;
+}
+.Project-hail2 {
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 0;
+  height: 0px;
+  border-radius: 20px;
+  transition: 0.7s;
+  border: 10px solid #D4FFEC;
+  pointer-events: none;
+  box-shadow: 0 4px  4px  rgb(180, 227, 211, .4),
+  0 1px  6px  rgba(127,255,212, .1),
+  0 8px  8px  rgba(127,255,212, .1),
+  0 16px 16px rgba(127,255,212, .1),
+  8px 32px 32px rgba(127,255,212, .1),
+  8px 64px 64px rgba(127,255,212,.1);
+}
+.imgMasked {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 200%;
+  height: 200px;
+  -webkit-clip-path: circle(5px at center);
+          clip-path: circle(5px at center);
+  transition: 0.5s;
+  pointer-events: none;
+}
+.Project-name {
+  position: absolute;
+  max-width: 600px;
+  min-width: 120px;
+  left: 0;
+  top: 150%;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #000;
+  z-index: 2;
+  opacity: 0;
+  padding: 5px;
+  text-align: center;
+}
+.Project-name:before {
+  content: '';
+  width: 0;
+  height: 100%;
+  background-color: #D4FFEC;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  z-index: -1;
+  box-shadow: 0 4px  4px  rgb(180, 227, 211, .4),
+  0 1px  6px  rgba(127,255,212, .1),
+  0 8px  8px  rgba(127,255,212, .1),
+  0 16px 16px rgba(127,255,212, .1),
+  8px 32px 32px rgba(127,255,212, .1),
+  8px 64px 64px rgba(127,255,212,.1);
+}
