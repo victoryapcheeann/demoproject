@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Logo from '../Logo/Logo';
 import './Main.css';
 import './MainAnimation';
-import './MainAnimation2';
 import PlayerCard from '../PlayerCard/PlayerCard';
 import PlayerTeamCard from '../PlayerTeamCard/PlayerTeamCard';
 
@@ -20,16 +19,30 @@ class Main extends Component {
                             <span className = "nep-highlight">FIFA FANTASY</span>
                         </div>
                     </div>
-                    <div className="rowStyle">
-                        <PlayerCard/> 
-                        <PlayerTeamCard/>
+                    <div className="introContainer mainTitleStyle">
+                        <span>Your dream team</span>
+                        <br/>
+                        <br/>
+                        <span>3 simple steps</span>
+                        <br/>
+                        <br/>
+                        <span>Let's begin</span>
                     </div>
                 </div>
             </div>
             <div>
-                <canvas id = "canvasThree" class="particleContainer2"></canvas>
-                <div className="mainContainer2 rowStyle">
-                 <PlayerCard/> 
+                <div className="mainContainer2 columnStyle">
+                 <div className="sectionContainer">
+                    <span className="mainTitleStyle">Step 1: Choose your player</span>
+                    <PlayerCard/> 
+                 </div>
+                 <div className="sectionContainer">
+                    <span className="mainTitleStyle">Step 2: Your team</span>
+                    <PlayerTeamCard/>
+                 </div>
+                 <div className="sectionContainer">
+                     <span className="mainTitleStyle">Step 3: statistics</span>
+                 </div>
                 </div>
             </div>
         </div>

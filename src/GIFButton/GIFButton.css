@@ -13,11 +13,13 @@
   -webkit-clip-path: circle(100px at center);
           clip-path: circle(100px at center);
 }
+
 .Project:hover .Project-hail {
   width: 200px;
   height: 200px;
   border-radius: 200px;
 }
+
 .Project:hover .Project-hail2 {
   width: 200px;
   height: 200px;
@@ -25,6 +27,7 @@
   border: 80px solid #fff4e6;
   opacity: 0;
 }
+
 .Project:hover .Project-name {
   left: 200%;
   opacity: 1;
@@ -45,6 +48,7 @@
   transition: 0.5s;
   opacity: 0.2;
 }
+
 .Project-hail2 {
   position: absolute;
   top: 200%;
@@ -55,9 +59,9 @@
   height: 0px;
   border-radius: 20px;
   transition: 0.7s;
-  border: 10px solid #D4FFEC;
+  border: 10px solid white;
   pointer-events: none;
-  box-shadow: 0 4px  4px  rgb(180, 227, 211, .4),
+  box-shadow: 0 4px  4px  rgb(255,255,255, .4),
   0 1px  6px  rgba(127,255,212, .1),
   0 8px  8px  rgba(127,255,212, .1),
   0 16px 16px rgba(127,255,212, .1),
@@ -76,6 +80,7 @@
   transition: 0.5s;
   pointer-events: none;
 }
+
 .Project-name {
   position: absolute;
   max-width: 600px;
@@ -84,17 +89,19 @@
   top: 150%;
   pointer-events: none;
   transition: 0.5s;
-  color: #000;
+  color: white;
+  font-size: 12px;
+  line-height: 15px;
   z-index: 2;
   opacity: 0;
-  padding: 5px;
-  text-align: center;
+  padding: 7.5px;
+  text-align: center; 
 }
 .Project-name:before {
   content: '';
   width: 0;
   height: 100%;
-  background-color: #D4FFEC;
+  background-color: black;
   position: absolute;
   top: 0;
   left: 0;

@@ -18,6 +18,7 @@ body {
   background-color: black;
   clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
   text-shadow: 0 0 10px white;
+  width: 350px;
 }
 
 .nep-highlight {
@@ -34,14 +35,6 @@ body {
   background-size: cover;
 }
 
-.particleContainer2 {
-  position: absolute;
-  margin-top: 100vh;
-  width: 100vw;
-  height: auto;
-  z-index: 0;
-}
-
 .mainContainer {
   position: absolute;
   z-index: 1;
@@ -52,4 +45,24 @@ body {
   margin-top: 100vh;
   height: auto;
   z-index: 1;
+  padding: 30px;
+}
+
+.mainTitleStyle {
+  font-size: 20px;  
+  text-shadow: 0 0 10px white;
+}
+
+.sectionContainer {
+  padding: 50px;
+}
+
+.introContainer {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10vw;
+  font-size: 35px;
 }

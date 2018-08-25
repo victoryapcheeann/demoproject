@@ -113,9 +113,8 @@
 
 .playerTeamSpecialMoveText {
     font-size: 9px;
-    text-shadow: 0 0 10px #D4FFEC;
-    color: #D4FFEC;
-    text-shadow: 0 0 10px white;
+    text-shadow: 0 0 10px rgb(255, 212, 212);
+    color: rgb(255, 212, 212);
     margin-left: 10px;
 }
 
