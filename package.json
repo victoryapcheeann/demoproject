@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@nivo/bar": "^0.44.0",
     "@nivo/chord": "^0.44.0",
-    "@nivo/line": "^0.44.0",
+    "@nivo/pie": "^0.44.0",
     "@nivo/radar": "^0.44.0",
     "mo-js": "^0.288.2",
     "react": "^16.4.2",

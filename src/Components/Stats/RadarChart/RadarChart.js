@@ -1,24 +1,28 @@
-import React, {Component} from 'react'
-import { ResponsiveRadar } from '@nivo/radar'
-import data from './radarData.json'
+import React, {Component} from 'react';
+import { ResponsiveRadar } from '@nivo/radar';
+import data from './radarData.json';
+import _ from 'lodash';
 
 class RadarChart extends Component {
+    getKeys() {    
+        let keys = this.props.players.map(function(value){
+            return value.Name
+        });
+        return(keys);
+    };
+
     render() {
       return (
         <ResponsiveRadar    
             data={data}
-            keys={[
-                "chardonay",
-                "carmenere",
-                "syrah"
-            ]}
+            keys={this.getKeys()}
             indexBy="taste"
             maxValue="auto"
             margin={{
-                "top": 70,
+                "top": 30,
                 "right": 80,
                 "bottom": 40,
-                "left": 80
+                "left": 220
             }}
             curve="catmullRomClosed"
             colors="inherit"
@@ -46,8 +50,8 @@ class RadarChart extends Component {
                 {
                     anchor: "top-left",
                     direction: "column",
-                    translateX: -50,
-                    translateY: -40,
+                    translateX: -220,
+                    translateY: 0,
                     itemWidth: 80,
                     itemHeight: 20,
                     symbolSize: 12,

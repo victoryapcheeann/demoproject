@@ -1,23 +1,25 @@
 import React, {Component} from 'react'
 import { ResponsiveChord } from '@nivo/chord'
 import data from './chordData.json'
+import _ from 'lodash';
 
 class Chord extends Component {
+    getKeys() {    
+        let keys = this.props.players.map(function(value){
+            return value.Name
+        });
+        return(keys);
+    };
+
     render() {
       return (
         <ResponsiveChord
         matrix={data}
-        keys={[
-            "John",
-            "Raoul",
-            "Jane",
-            "Marcel",
-            "Ibrahim"
-        ]}
+        keys={this.getKeys()}
         margin={{
-            "top": 60,
+            "top": 120,
             "right": 60,
-            "bottom": 90,
+            "bottom": 120,
             "left": 60
         }}
         padAngle={0.02}
@@ -45,11 +47,12 @@ class Chord extends Component {
         motionDamping={7}
         legends={[
             {
-                "anchor": "bottom",
-                "direction": "row",
-                "translateY": 70,
+                "anchor": "top-left",
+                "direction": "column",
+                "translateY": -100,
+                "translateX": -60,
                 "itemWidth": 80,
-                "itemHeight": 14,
+                "itemHeight": 20,
                 "symbolSize": 14,
                 "symbolShape": "circle"
             }

@@ -1,98 +1,131 @@
 import React, {Component} from 'react'
-import { ResponsiveBar } from '@nivo/bar'
+import { ResponsivePie } from '@nivo/pie'
 import data from './barData.json'
+import _ from 'lodash';
 
 class BarChart extends Component {
     render() {
       return (
-            <ResponsiveBar
-                    data={data}
-                    keys={[
-                        "hot dog",
-                        "burger",
-                        "sandwich",
-                        "kebab",
-                        "fries",
-                        "donut"
-                    ]}
-                    indexBy="country"
-                    margin={{
-                        "top": 50,
-                        "right": 130,
-                        "bottom": 50,
-                        "left": 60
-                    }}
-                    padding={0.3}
-                    colors="nivo"
-                    colorBy="id"
-                    defs={[
-                        {
-                            "id": "dots",
-                            "type": "patternDots",
-                            "background": "inherit",
-                            "color": "#38bcb2",
-                            "size": 4,
-                            "padding": 1,
-                            "stagger": true
-                        },
-                        {
-                            "id": "lines",
-                            "type": "patternLines",
-                            "background": "inherit",
-                            "color": "#eed312",
-                            "rotation": -45,
-                            "lineWidth": 6,
-                            "spacing": 10
-                        }
-                    ]}
-                    borderColor="inherit:darker(1.6)"
-                    axisBottom={{
-                        "orient": "bottom",
-                        "tickSize": 5,
-                        "tickPadding": 5,
-                        "tickRotation": 0,
-                        "legend": "country",
-                        "legendPosition": "center",
-                        "legendOffset": 36
-                    }}
-                    axisLeft={{
-                        "orient": "left",
-                        "tickSize": 5,
-                        "tickPadding": 5,
-                        "tickRotation": 0,
-                        "legend": "food",
-                        "legendPosition": "center",
-                        "legendOffset": -40
-                    }}
-                    labelSkipWidth={12}
-                    labelSkipHeight={12}
-                    labelTextColor="inherit:darker(1.6)"
-                    animate={true}
-                    motionStiffness={90}
-                    motionDamping={15}
-                    legends={[
-                        {
-                            "dataFrom": "keys",
-                            "anchor": "bottom-right",
-                            "direction": "column",
-                            "translateX": 120,
-                            "itemWidth": 100,
-                            "itemHeight": 20,
-                            "itemsSpacing": 2,
-                            "symbolSize": 20
-                        }
-                    ]}
-                    theme={{
-                        "tooltip": {
-                            "container": {
-                                "fontSize": "13px"
-                            }
-                        },
-                        "labels": {
-                            "textColor": "#555"
-                        }
-                    }}
-                />
+        <ResponsivePie
+        data={data}
+        margin={{
+            "top": 40,
+            "right": 80,
+            "bottom": 80,
+            "left": 80
+        }}
+        innerRadius={0.5}
+        padAngle={0.7}
+        cornerRadius={3}
+        colors="nivo"
+        colorBy="id"
+        borderWidth={1}
+        borderColor="inherit:darker(0.2)"
+        radialLabelsSkipAngle={10}
+        radialLabelsTextXOffset={6}
+        radialLabelsTextColor="#333333"
+        radialLabelsLinkOffset={0}
+        radialLabelsLinkDiagonalLength={16}
+        radialLabelsLinkHorizontalLength={24}
+        radialLabelsLinkStrokeWidth={1}
+        radialLabelsLinkColor="inherit"
+        slicesLabelsSkipAngle={10}
+        slicesLabelsTextColor="#333333"
+        animate={true}
+        motionStiffness={90}
+        motionDamping={15}
+        theme={{
+            "tooltip": {
+                "container": {
+                    "fontSize": "13px"
+                }
+            },
+            "labels": {
+                "textColor": "#555"
+            }
+        }}
+        defs={[
+            {
+                "id": "dots",
+                "type": "patternDots",
+                "background": "inherit",
+                "color": "rgba(255, 255, 255, 0.3)",
+                "size": 4,
+                "padding": 1,
+                "stagger": true
+            },
+            {
+                "id": "lines",
+                "type": "patternLines",
+                "background": "inherit",
+                "color": "rgba(255, 255, 255, 0.3)",
+                "rotation": -45,
+                "lineWidth": 6,
+                "spacing": 10
+            }
+        ]}
+        fill={[
+            {
+                "match": {
+                    "id": "ruby"
+                },
+                "id": "dots"
+            },
+            {
+                "match": {
+                    "id": "c"
+                },
+                "id": "dots"
+            },
+            {
+                "match": {
+                    "id": "go"
+                },
+                "id": "dots"
+            },
+            {
+                "match": {
+                    "id": "python"
+                },
+                "id": "dots"
+            },
+            {
+                "match": {
+                    "id": "scala"
+                },
+                "id": "lines"
+            },
+            {
+                "match": {
+                    "id": "lisp"
+                },
+                "id": "lines"
+            },
+            {
+                "match": {
+                    "id": "elixir"
+                },
+                "id": "lines"
+            },
+            {
+                "match": {
+                    "id": "javascript"
+                },
+                "id": "lines"
+            }
+        ]}
+        legends={[
+            {
+                "anchor": "bottom",
+                "direction": "row",
+                "translateY": 56,
+                "itemWidth": 100,
+                "itemHeight": 18,
+                "symbolSize": 18,
+                "symbolShape": "circle"
+            }
+        ]}
+    />
     )
     }
 }

@@ -3,7 +3,6 @@ import './Stats.css';
 import { connect } from "react-redux";
 import RadarChart from "./RadarChart/RadarChart";
 import BarChart from "./BarChart/BarChart";
-import LineChart from "./LineChart/LineChart";
 import Chord from "./Chord/Chord";
 
 class Stats extends Component {
@@ -33,7 +32,7 @@ class Stats extends Component {
 
 function mapStateToProps(state) {
   return {
-    players: state.team
+    players: state.players
   };
 }
 

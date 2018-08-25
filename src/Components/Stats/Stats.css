@@ -5,7 +5,7 @@
 
 .chartContainer {
     height: 500px;
-    width: 500px;
+    width: 600px;
     color: black;
     font-size: 12px;
     background-color:white;
@@ -22,7 +22,7 @@
     background-color:white;
     border-radius: 5px;
     margin: 30px;
-    padding: 20px;
+    padding: 50px;
     box-shadow: 0 4px  4px  rgb(255, 255, 255, 1),
     0 1px  6px  rgba(255, 255, 255, 1),
     0 8px  8px  rgba(255, 255, 255, .5),
