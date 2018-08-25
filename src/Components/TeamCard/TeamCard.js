@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import GIFButton from '../GIFButton/GIFButton'
 import { removePlayer } from '../../actions';
 import FlipMove from 'react-flip-move';
+import ClickBurst from '../ClickBurst/ClickBurst'
 
 class TeamCard extends Component {
   removePlayer(player) {this.props.removePlayer(player);}
@@ -54,10 +55,11 @@ class TeamCard extends Component {
                 <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove}/>
                 <div className="playerTeamSpecialMoveText">Special Move</div>  
               </div>
-            <button className="playerTeamRemoveButton" onClick={()=>this.removePlayer(player)}>
-                <span>Remove Player</span>
-            </button>
-            
+            <ClickBurst color="rgba(127,255,212,1)">
+              <button className="playerTeamRemoveButton" onClick={()=>this.removePlayer(player)}>
+                  <span>Remove Player</span>
+              </button>
+            </ClickBurst>
           </div>
         </div>
         );
