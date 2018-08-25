@@ -8,6 +8,7 @@ import ParticleEffect from 'react-particle-effect-button'
 import PlayerCard from '../PlayerCard/PlayerCard';
 import TeamCard from '../TeamCard/TeamCard';
 import Stats from '../Stats/Stats';
+import Fade from 'react-reveal/Fade';
 
 class Main extends Component {
     constructor(props) {
@@ -47,18 +48,21 @@ class Main extends Component {
                 <div className="mainContainer columnStyle">
                     <div className="headerStyle rowStyle">
                         <Logo />
-                        <div className = "headertext">Victor Yap<br/>
-                            <span className = "nep-highlight">FIFA FANTASY</span>
-                        </div>
+                        <Fade top duration={1000}>
+                            <div className = "headertext">Victor Yap<br/>
+                                <span className = "nep-highlight">FIFA FANTASY</span>
+                            </div>
+                        </Fade>
                     </div>
-                    <div className="introContainer mainTitleStyle">
-                        <span>Your dream team</span>
-                        <br/>
-                        <br/>
-                        <span>3 simple steps</span>
-                        <br/>
-                        <br/>
-                        <span>Let's begin</span>   
+                    <Fade left duration={2000}>
+                    <div className="introContainer mainTitleStyle">                    
+                            <span>Your dream team</span>
+                            <br/>
+                            <br/>
+                            <span>3 simple steps</span>
+                            <br/>
+                            <br/>
+                            <span>Let's begin</span>  
                         <div onClick={this.expandToggle }>           
                         <ParticleEffect                    
                             hidden={hidden}
@@ -83,6 +87,7 @@ class Main extends Component {
                         </ParticleEffect>
                         </div> 
                     </div>
+                    </Fade> 
                 </div>
             </div>
             <div>
