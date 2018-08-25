@@ -32,15 +32,17 @@ class Main extends Component {
             </div>
             <div>
                 <div className="mainContainer2 columnStyle">
-                 <div className="sectionContainer">
+                 <div className="sectionContainer playerSectionContainer">
                     <span className="mainTitleStyle">Step 1: Choose your player</span>
-                    <PlayerCard/> 
+                    <div className="rowStyle">
+                      <PlayerCard/> 
+                    </div>
                  </div>
-                 <div className="sectionContainer">
+                 <div className="sectionContainer teamSectionContainer">
                     <span className="mainTitleStyle">Step 2: Your team</span>
                     <PlayerTeamCard/>
                  </div>
-                 <div className="sectionContainer">
+                 <div className="sectionContainer statisticsSectionContainer">
                      <span className="mainTitleStyle">Step 3: statistics</span>
                  </div>
                 </div>

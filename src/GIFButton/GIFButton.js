@@ -6,10 +6,10 @@ class GIFButton extends Component {
     return (
         <div>
             <div class="Project">
-            <img src="https://media.giphy.com/media/5haLplsVsUT7i/giphy.gif" alt="" class="imgMasked" />
+            <img src={this.props.GIF} alt="" class="imgMasked" />
             <div class="Project-hail"></div>
             <div class="Project-hail2"></div>
-            <p class="Project-name">Special Move: <br/>Team Hug</p>
+            <p class="Project-name">Special Move: <br/>{this.props.SpecialMove}</p>
             </div>
         </div>
     );

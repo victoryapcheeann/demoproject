@@ -54,7 +54,40 @@ body {
 }
 
 .sectionContainer {
-  padding: 50px;
+  margin: 30px;
+  padding: 30px;
+  width: 85vw;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.playerSectionContainer {
+  box-shadow: 0 4px  4px  rgb(180, 227, 211, .4),
+  0 1px  6px  rgba(127,255,212, .1),
+  0 8px  8px  rgba(127,255,212, .1),
+  0 16px 16px rgba(127,255,212, .1),
+  8px 32px 32px rgba(127,255,212, .1),
+  8px 64px 64px rgba(127,255,212,.1);
+}
+
+.teamSectionContainer {
+  box-shadow: 0 4px  4px  rgba(255, 135, 167, 0.4),
+  0 1px  6px  rgba(255, 135, 167, .1),
+  0 8px  8px  rgba(255, 135, 167, .1),
+  0 16px 16px rgba(255, 135, 167, .1),
+  8px 32px 32px rgba(255, 135, 167, .1),
+  8px 64px 64px rgba(255, 135, 167, .1);
+}
+
+.statisticsSectionContainer {
+  box-shadow: 0 4px  4px  rgba(255, 250, 112, 0.4),
+  0 1px  6px  rgba(255, 250, 112, .1),
+  0 8px  8px  rgba(255, 250, 112, .1),
+  0 16px 16px rgba(255, 250, 112, .1),
+  8px 32px 32px rgba(255, 250, 112, .1),
+  8px 64px 64px rgba(255, 250, 112,.1);
 }
 
 .introContainer {

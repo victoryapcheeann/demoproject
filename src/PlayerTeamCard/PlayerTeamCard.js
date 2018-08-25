@@ -7,7 +7,7 @@ class PlayerTeamCard extends Component {
     return (
         <div className = "playerTeamContainer columnStyle">
           <div className= "playerTeamSubContainer columnStyle">
-            <img src="./player1.jpg" className="playerTeamImage"/>
+            <img src="./player1.jpg" alt="player" className="playerTeamImage"/>
             <div className = "playerTeamDescriptionContainer">
               <span className = "playerTeamDescriptionSubContainer">
                 <span className="playerTeamDescriptionTitle">Player</span>
