@@ -57,7 +57,7 @@ class PlayerCard extends Component {
                         <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove}/>
                         <div className="playerSpecialMoveText">Special Move</div>            
                       </div>
-                    <ClickBurst color="rgba(255, 127, 127, 1)">
+                    <ClickBurst color="#FF0066">
                       <button className="playerAddButton" onClick={()=>this.addPlayer(player)}>
                           <span>Add player</span>
                       </button>

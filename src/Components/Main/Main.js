@@ -48,14 +48,15 @@ class Main extends Component {
                 <div className="mainContainer columnStyle">
                     <div className="headerStyle rowStyle">
                         <Logo />
-                        <Fade top duration={1000}>
+                        <Fade top duration={2000}>
                             <div className = "headertext">Victor Yap<br/>
                                 <span className = "nep-highlight">FIFA FANTASY</span>
                             </div>
                         </Fade>
                     </div>
-                    <Fade left duration={2000}>
-                    <div className="introContainer mainTitleStyle">                    
+                    
+                    <div className="introContainer mainTitleStyle">   
+                      <Fade top duration={2000}>                 
                             <span>Your dream team</span>
                             <br/>
                             <br/>
@@ -63,7 +64,9 @@ class Main extends Component {
                             <br/>
                             <br/>
                             <span>Let's begin</span>  
-                        <div onClick={this.expandToggle }>           
+                    </Fade>
+                        <div onClick={this.expandToggle }>                     
+                    <Fade bottom duration={2000}>       
                         <ParticleEffect                    
                             hidden={hidden}
                             onComplete={this._onAnimationComplete}
@@ -85,9 +88,9 @@ class Main extends Component {
                             </div>
                         </div>
                         </ParticleEffect>
+                    </Fade>
                         </div> 
-                    </div>
-                    </Fade> 
+                    </div> 
                 </div>
             </div>
             <div>
