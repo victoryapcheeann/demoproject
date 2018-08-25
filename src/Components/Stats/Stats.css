@@ -1,0 +1,51 @@
+.mainChartContainer {
+    display:flex;
+    justify-content: space-around;
+}
+
+.chartContainer {
+    height: 500px;
+    width: 500px;
+    color: black;
+    font-size: 12px;
+    background-color:white;
+    border-radius: 5px;
+    margin: 30px;
+    padding:20px;
+}
+
+.chartContainer2 {
+    height: 500px;
+    width: 1000px;
+    color: black;
+    font-size: 12px;
+    background-color:white;
+    border-radius: 5px;
+    margin: 30px;
+    padding: 20px;
+    box-shadow: 0 4px  4px  rgb(255, 255, 255, 1),
+    0 1px  6px  rgba(255, 255, 255, 1),
+    0 8px  8px  rgba(255, 255, 255, .5),
+    0 16px 16px rgba(255, 255, 255, .5),
+    8px 32px 32px rgba(255, 255, 255, .1),
+    8px 64px 64px rgba(255, 255, 255,.1);
+}
+
+.chartHeader {
+    font-size: 15px;
+    color: black;
+    text-shadow: 0 0 2.5px black;
+}
+
+.textColor {
+    color: white;
+}
+
+.containerShadow {
+    box-shadow: 0 4px  4px  rgba(255, 250, 112, 0.4),
+    0 1px  6px  rgba(255, 250, 112, .1),
+    0 8px  8px  rgba(255, 250, 112, .1),
+    0 16px 16px rgba(255, 250, 112, .1),
+    8px 32px 32px rgba(255, 250, 112, .1),
+    8px 64px 64px rgba(255, 250, 112,.1);
+}

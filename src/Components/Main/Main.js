@@ -7,6 +7,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import ParticleEffect from 'react-particle-effect-button'
 import PlayerCard from '../PlayerCard/PlayerCard';
 import TeamCard from '../TeamCard/TeamCard';
+import Stats from '../Stats/Stats';
 
 class Main extends Component {
     constructor(props) {
@@ -70,11 +71,11 @@ class Main extends Component {
                             particlesAmountCoefficient={7}
                             oscillationCoefficient={30}>
                             <div>
-                            <div class="scrolldown-container">
-                            <div class="scrolldown-btn">
-                                <svg version="1.1" id="Слой_1" x="0px" y="0px" width="50px" height="80px" viewbox="0 0 50 80" enable-background="new 0 0 50 80">
-                                <path class="first-path" fill="#00000"d="M0 10 L10 21 L20 10"></path>
-                                <path class="second-path" fill="#00000"d="M0 20 L10 31 L20 20"></path>
+                            <div className="scrolldown-container">
+                            <div className="scrolldown-btn">
+                                <svg version="1.1" id="Слой_1" x="0px" y="0px" width="50px" height="80px">
+                                <path className="first-path" fill="#00000"d="M0 10 L10 21 L20 10"></path>
+                                <path className="second-path" fill="#00000"d="M0 20 L10 31 L20 20"></path>
                                 </svg>
                             </div>
                             </div>
@@ -100,6 +101,7 @@ class Main extends Component {
                  </div>
                  <div className="sectionContainer statisticsSectionContainer">
                      <span className="mainTitleStyle">Step 3: statistics</span>
+                     <Stats/>
                  </div>
                 </div>
             </div>

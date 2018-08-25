@@ -10,7 +10,7 @@ class TeamCard extends Component {
 
   render() {
     return (
-      <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" class="rowStyle">
+      <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" className="rowStyle">
       {
       this.props.players.map((player) => {
        return (

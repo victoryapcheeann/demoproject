@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import GIFButton from '../GIFButton/GIFButton'
 import { addPlayer } from '../../actions';
 import FlipMove from 'react-flip-move';
-import { CSSTransition, TransitionGroup} from 'react-transition-group';
+
 class PlayerCard extends Component {
   addPlayer(player) {
     this.props.addPlayer(player);
@@ -12,7 +12,7 @@ class PlayerCard extends Component {
 
   render() {
     return (
-      <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" class="rowStyle">
+      <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" className="rowStyle">
         {
         this.props.players.map((player) => {
             return ( 

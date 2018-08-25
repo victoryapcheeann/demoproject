@@ -5,11 +5,11 @@ class GIFButton extends Component {
   render() {
     return (
         <div>
-            <div class="Project">
-            <img src={this.props.GIF} alt="" class="imgMasked" />
-            <div class="Project-hail"></div>
-            <div class="Project-hail2"></div>
-            <p class="Project-name">Special Move: <br/>{this.props.SpecialMove}</p>
+            <div className="Project">
+              <img src={this.props.GIF} alt="" className="imgMasked" />
+              <div className="Project-hail"></div>
+              <div className="Project-hail2"></div>
+              <p className="Project-name">Special Move: <br/>{this.props.SpecialMove}</p>
             </div>
         </div>
     );
