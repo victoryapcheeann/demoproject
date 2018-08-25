@@ -40,7 +40,9 @@ class Main extends Component {
                  </div>
                  <div className="sectionContainer teamSectionContainer">
                     <span className="mainTitleStyle">Step 2: Your team</span>
-                    <PlayerTeamCard/>
+                    <div className="rowStyle">
+                     <PlayerTeamCard/>
+                    </div>
                  </div>
                  <div className="sectionContainer statisticsSectionContainer">
                      <span className="mainTitleStyle">Step 3: statistics</span>

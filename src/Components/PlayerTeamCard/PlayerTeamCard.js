@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
 import './PlayerTeamCard.css';
+import { connect } from "react-redux";
 import GIFButton from '../GIFButton/GIFButton'
+import { removePlayer } from '../../actions';
 
 class PlayerTeamCard extends Component {
+  removePlayer(player) {this.props.removePlayer(player);}
+
   render() {
     return (
-        <div className = "playerTeamContainer columnStyle">
+      this.props.players.map((player) => {
+       return (
+        <div key={player.ID} className = "playerTeamContainer columnStyle">
           <div className= "playerTeamSubContainer columnStyle">
-            <img src="./player1.jpg" alt="player" className="playerTeamImage"/>
+            <img src={player.Photo} alt="player" className="playerTeamImage"/>
             <div className = "playerTeamDescriptionContainer">
               <span className = "playerTeamDescriptionSubContainer">
                 <span className="playerTeamDescriptionTitle">Player</span>
-                <span className="playerTeamDescriptionDetails">ronaldo</span>
+                <span className="playerTeamDescriptionDetails">{player.Name}</span>
               </span>
               <div className="playerTeamHorizontalLine"></div>
               <span className = "playerTeamDescriptionSubContainer">
                 <span className="playerTeamDescriptionTitle">Team</span>
-                <span className="playerTeamDescriptionDetails">Juventus</span>
+                <span className="playerTeamDescriptionDetails">{player.Team}</span>
               </span>
               <div className="playerTeamHorizontalLine"></div>
                 <span className = "playerTeamDescriptionSubContainer">
                  <span className="playerTeamDescriptionTitle">Fantasy Role</span>
-                 <span className="playerTeamDescriptionDetails">striker</span>
+                 <span className="playerTeamDescriptionDetails">{player.Role}</span>
                 </span>
               <div className="playerTeamHorizontalLine"></div>
             </div>     
@@ -34,25 +40,38 @@ class PlayerTeamCard extends Component {
                   <span>Popularity</span>
                 </div>
                 <div className="columnStyle playerTeamAttributeScore">
-                  <span>10</span>
-                  <span>9</span>
-                  <span>9</span>
-                  <span>5</span>
-                  <span>10</span>
+                    <span>{player.Strength}</span>
+                    <span>{player.Agility}</span>
+                    <span>{player.Intelligence}</span>
+                    <span>{player.Strategy}</span>
+                    <span>{player.Popularity}</span>
                 </div>
             </div>
             <div className="playerTeamGifContainer">
                 <div className="playerTeamSpecialMoveText">Special Move</div>
-                <GIFButton/>
+                <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove}/>
               </div>
-            <button className="playerTeamRemoveButton">
+            <button className="playerTeamRemoveButton" onClick={()=>this.removePlayer(player)}>
                 <span>Remove Player</span>
             </button>
             
           </div>
         </div>
-    );
+        );
+      })
+    )
   }
 }
 
-export default PlayerTeamCard;
+function mapStateToProps(state) {
+  return {
+    players: state.team
+  };
+}
+
+const mapDispatchToProps = {
+  removePlayer
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerTeamCard);
+

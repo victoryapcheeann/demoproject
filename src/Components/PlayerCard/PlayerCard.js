@@ -2,17 +2,21 @@ import React, { Component } from 'react';
 import './PlayerCard.css';
 import { connect } from "react-redux";
 import GIFButton from '../GIFButton/GIFButton'
+import { addPlayer } from '../../actions';
 
 class PlayerCard extends Component {
-  render() {
-    console.log(this.props.players);
+  addPlayer(player) {
+    console.log(player);
+    this.props.addPlayer(player);
+  }
 
+  render() {
     return (
-      this.props.players.map(player => {
+      this.props.players.map((player) => {
           return ( 
-              <div className = "playerContainer columnStyle">
+              <div key={player.ID} className = "playerContainer columnStyle">
                 <div className= "playerSubContainer columnStyle">
-                  <img src={player.Photo} className="playerImage"/>
+                  <img src={player.Photo} alt="player" className="playerImage"/>
                   <div className = "playerDescriptionContainer">
                     <span className = "playerDescriptionSubContainer">
                       <span className="playerDescriptionTitle">Player</span>
@@ -50,7 +54,7 @@ class PlayerCard extends Component {
                       <div className="playerSpecialMoveText">Special Move</div>
                       <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove}/>
                     </div>
-                  <button className="playerAddButton">
+                  <button className="playerAddButton" onClick={()=>this.addPlayer(player)}>
                       <span>Add player</span>
                   </button>
                   
@@ -68,4 +72,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, null)(PlayerCard);
+const mapDispatchToProps = {
+  addPlayer
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerCard);
