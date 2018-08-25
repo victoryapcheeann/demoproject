@@ -7,7 +7,7 @@ export default function(state = initialTeamState, action) {
       case 'ADD_PLAYER': 
         return [
             ...state, i
-        ]
+        ].sort((a, b) => a.ID - b.ID);
       case 'REMOVE_PLAYER':  
         return state.filter(({ ID }) => ID !== i.ID)
         

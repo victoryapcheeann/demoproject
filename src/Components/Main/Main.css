@@ -6,6 +6,7 @@ body {
   margin: 0;
 }
 
+/*Header*/
 .headertext {
   position: relative;
   padding: 20px 40px 10px 10px;
@@ -27,14 +28,25 @@ body {
   text-shadow: 0 0 10px aquamarine;
 }
 
+/*Particle Container*/
 .particleContainer {
   position: absolute;
   z-index: 0;
+}
+
+.backgroundImage {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/footballBackground.jpg');
   background-position: center;
   background-size: cover;
+  animation: fadein 4s;
 }
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/*Overall Container*/
 .mainContainer {
   position: absolute;
   z-index: 1;
@@ -53,6 +65,7 @@ body {
   text-shadow: 0 0 10px white;
 }
 
+/*Main Section*/
 .sectionContainer {
   margin: 30px;
   padding: 30px;
@@ -63,7 +76,9 @@ body {
   white-space: nowrap;
 }
 
+/*Player Section*/
 .playerSectionContainer {
+  height: 500px;
   box-shadow: 0 4px  4px  rgb(180, 227, 211, .4),
   0 1px  6px  rgba(127,255,212, .1),
   0 8px  8px  rgba(127,255,212, .1),
@@ -72,7 +87,21 @@ body {
   8px 64px 64px rgba(127,255,212,.1);
 }
 
+.playerSectionContainer::-webkit-scrollbar {
+  width: 12px;
+}
+
+.playerSectionContainer::-webkit-scrollbar-track {
+  background:white;
+}
+
+.playerSectionContainer::-webkit-scrollbar-thumb {
+  background:rgba(180, 227, 211);
+}
+
+/*Team Section*/
 .teamSectionContainer {
+  height: 500px;
   box-shadow: 0 4px  4px  rgba(255, 135, 167, 0.4),
   0 1px  6px  rgba(255, 135, 167, .1),
   0 8px  8px  rgba(255, 135, 167, .1),
@@ -81,6 +110,19 @@ body {
   8px 64px 64px rgba(255, 135, 167, .1);
 }
 
+.teamSectionContainer::-webkit-scrollbar {
+  width: 12px;
+}
+
+.teamSectionContainer::-webkit-scrollbar-track {
+  background:white;
+}
+
+.teamSectionContainer::-webkit-scrollbar-thumb {
+  background:rgba(255, 135, 167);
+}
+
+/*Statistics*/
 .statisticsSectionContainer {
   box-shadow: 0 4px  4px  rgba(255, 250, 112, 0.4),
   0 1px  6px  rgba(255, 250, 112, .1),
@@ -99,3 +141,5 @@ body {
   margin-left: 10vw;
   font-size: 35px;
 }
+
+

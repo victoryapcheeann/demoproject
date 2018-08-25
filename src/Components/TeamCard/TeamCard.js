@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import './PlayerTeamCard.css';
+import './TeamCard.css';
 import { connect } from "react-redux";
 import GIFButton from '../GIFButton/GIFButton'
 import { removePlayer } from '../../actions';
+import FlipMove from 'react-flip-move';
 
-class PlayerTeamCard extends Component {
+class TeamCard extends Component {
   removePlayer(player) {this.props.removePlayer(player);}
 
   render() {
     return (
+      <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" class="rowStyle">
+      {
       this.props.players.map((player) => {
        return (
         <div key={player.ID} className = "playerTeamContainer columnStyle">
@@ -48,8 +51,8 @@ class PlayerTeamCard extends Component {
                 </div>
             </div>
             <div className="playerTeamGifContainer">
-                <div className="playerTeamSpecialMoveText">Special Move</div>
                 <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove}/>
+                <div className="playerTeamSpecialMoveText">Special Move</div>  
               </div>
             <button className="playerTeamRemoveButton" onClick={()=>this.removePlayer(player)}>
                 <span>Remove Player</span>
@@ -59,6 +62,8 @@ class PlayerTeamCard extends Component {
         </div>
         );
       })
+     }
+    </FlipMove>
     )
   }
 }
@@ -73,5 +78,5 @@ const mapDispatchToProps = {
   removePlayer
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayerTeamCard);
+export default connect(mapStateToProps, mapDispatchToProps)(TeamCard);
 
