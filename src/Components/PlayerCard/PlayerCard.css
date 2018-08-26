@@ -148,3 +148,12 @@
 .toastStyle {
     font-size: 15px;
 }
+
+.length-changed {
+    animation: length-keyframes 0.4s;
+  }
+  
+  @keyframes length-keyframes {
+    from {opacity: 0.01}
+    to {opacity: 1}
+  }

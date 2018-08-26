@@ -7,6 +7,7 @@ import FlipMove from 'react-flip-move';
 import ClickBurst from '../ClickBurst/ClickBurst'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AnimateOnChange from 'react-animate-on-change'
 
 class PlayerCard extends Component {
   addPlayer(player) {
@@ -42,7 +43,12 @@ class PlayerCard extends Component {
       />
       <div className="mainTitleStyle">
         <span>Step 1: Choose your player      </span>
-        <span>{this.props.teamPlayers.length}</span>
+        <AnimateOnChange
+          baseClassName="length" 
+          animationClassName="length-changed" 
+          animate={this.props.teamPlayers.length != 0}>
+          <span>{this.props.teamPlayers.length}</span>
+        </AnimateOnChange>
         <span>/11</span>
       </div>
       <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" className="rowStyle">
