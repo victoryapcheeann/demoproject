@@ -44,7 +44,7 @@ class Stats extends Component {
                 <div className="columnStyle">
                   <span className="chartHeader">Team Chemistry</span>
                   <br/>
-                  <span className="chartHeader">Score: {this.getChemistryScore()}</span>
+                  <span className="scoreHeader">Score: {this.getChemistryScore()}</span>
                 </div>
                 <Chord players={this.props.players}/>
             </div>

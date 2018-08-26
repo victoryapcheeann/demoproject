@@ -32,9 +32,15 @@
 }
 
 .chartHeader {
-    font-size: 15px;
+    font-size: 25px;
     color: black;
     text-shadow: 0 0 1.5px black;
+}
+
+.scoreHeader {
+    font-size: 20px;
+    color: grey;
+    text-shadow: 0 0 1.5px grey;
 }
 
 .textColor {

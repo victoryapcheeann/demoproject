@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import { ResponsiveChord } from '@nivo/chord'
-import data from './chordData.json'
 import _ from 'lodash';
 
 class Chord extends Component {
@@ -12,7 +11,7 @@ class Chord extends Component {
     };
 
     getChordData() {
-        if (this.props.players.length > 0) {
+        if (this.props.players.length > 1) {
             let teamArray = this.props.players.map(function(value){
                 return value.ID
             });  
@@ -39,13 +38,13 @@ class Chord extends Component {
         matrix={this.getChordData()}
         keys={this.getKeys()}
         margin={{
-            "top": 120,
-            "right": 60,
-            "bottom": 120,
-            "left": 60
+            "top": 70,
+            "right": 80,
+            "bottom": 140,
+            "left": 220
         }}
         padAngle={0.02}
-        innerRadiusRatio={0.96}
+        innerRadiusRatio={0.90}
         innerRadiusOffset={0.02}
         arcOpacity={1}
         arcBorderWidth={1}
@@ -69,14 +68,14 @@ class Chord extends Component {
         motionDamping={7}
         legends={[
             {
-                "anchor": "top-left",
-                "direction": "column",
-                "translateY": -100,
-                "translateX": -60,
-                "itemWidth": 80,
-                "itemHeight": 20,
-                "symbolSize": 14,
-                "symbolShape": "circle"
+                anchor: "top-left",
+                direction: "column",
+                translateX: -220,
+                translateY: 0,
+                itemWidth: 80,
+                itemHeight: 20,
+                symbolSize: 12,
+                symbolShape: "circle"
             }
         ]}
     />
