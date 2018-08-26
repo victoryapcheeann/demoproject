@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Stats.css';
 import { connect } from "react-redux";
 import RadarChart from "./RadarChart/RadarChart";
-import BarChart from "./BarChart/BarChart";
 import Chord from "./Chord/Chord";
 
 class Stats extends Component {
@@ -10,13 +9,9 @@ class Stats extends Component {
     return (
       <div>
         <div className="mainChartContainer rowStyle">
-            <div className="chartContainer containerShadow">
+            <div className="chartContainer2 containerShadow">
                 <span className="chartHeader">Team Stats</span>
                 <RadarChart players={this.props.players}/>
-            </div>
-            <div className="chartContainer containerShadow">
-                <span className="chartHeader">Team Position</span>
-                <BarChart players={this.props.players}/>
             </div>
         </div>
         <div className="mainChartContainer rowStyle">
@@ -32,7 +27,7 @@ class Stats extends Component {
 
 function mapStateToProps(state) {
   return {
-    players: state.players
+    players: state.team
   };
 }
 

@@ -44,10 +44,14 @@ class Main extends Component {
     <div>
         <div>
             <div>
+            <Fade duration={4000}>
                <canvas id = "canvasTwo" className="particleContainer backgroundImage"></canvas>
+            </Fade>
                 <div className="mainContainer columnStyle">
                     <div className="headerStyle rowStyle">
-                        <Logo />
+                        <Fade bottom duration={4000}>
+                         <Logo />
+                        </Fade>
                         <Fade top duration={2000}>
                             <div className = "headertext">Victor Yap<br/>
                                 <span className = "nep-highlight">FIFA FANTASY</span>
