@@ -5,14 +5,46 @@ import GIFButton from '../GIFButton/GIFButton'
 import { addPlayer } from '../../actions';
 import FlipMove from 'react-flip-move';
 import ClickBurst from '../ClickBurst/ClickBurst'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class PlayerCard extends Component {
   addPlayer(player) {
-    this.props.addPlayer(player);
+    if (this.props.teamPlayers.length < 11) {
+      this.props.addPlayer(player);
+    }
+    else {
+      toast.info('🦄 Your team is full !!!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        className: 'toastStyle'
+      });
+    }
   }
 
   render() {
     return (
+      <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnVisibilityChange
+        draggable
+        pauseOnHover
+      />
+      <div className="mainTitleStyle">
+        <span>Step 1: Choose your player      </span>
+        <span>{this.props.teamPlayers.length}</span>
+        <span>/11</span>
+      </div>
       <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" className="rowStyle">
         {
         this.props.players.map((player) => {
@@ -68,13 +100,15 @@ class PlayerCard extends Component {
         })
       }
       </FlipMove>
+      </div>
     )
   }
 }
 
 function mapStateToProps(state) {
   return {
-    players: state.players
+    players: state.players,
+    teamPlayers: state.team
   };
 }
 

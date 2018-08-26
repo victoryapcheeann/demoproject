@@ -100,19 +100,16 @@ class Main extends Component {
             <div>
                 <div className="mainContainer2 columnStyle">
                     <div className="sectionContainer playerSectionContainer playerScroll" ref={(section) => { this.Start = section; }}>
-                        <span className="mainTitleStyle">Step 1: Choose your player</span>
                         <div className="rowStyle">
                         <PlayerCard/> 
                         </div>
                     </div>
                  <div className="sectionContainer teamSectionContainer">
-                        <span className="mainTitleStyle">Step 2: Your team</span>
                         <div className="rowStyle">
                         <TeamCard/>
                         </div>
                  </div>
                  <div className="sectionContainer statisticsSectionContainer">
-                     <span className="mainTitleStyle">Step 3: statistics</span>
                      <Stats/>
                  </div>
                 </div>

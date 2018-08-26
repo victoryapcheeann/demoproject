@@ -33,8 +33,9 @@ class Stats extends Component {
   render() {
     return (
       <div>
+        <span className="mainTitleStyle">Step 3: statistics</span>
         <div className="mainChartContainer rowStyle">
-            <div className="chartContainer2 containerShadow">
+            <div className="chartContainer containerShadow">
                 <span className="chartHeader">Team Stats</span>
                 <RadarChart players={this.props.players}/>
             </div>

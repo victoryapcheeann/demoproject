@@ -11,6 +11,8 @@ class TeamCard extends Component {
 
   render() {
     return (
+      <div>
+      <span className="mainTitleStyle">Step 2: Your team</span>
       <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" className="rowStyle">
       {
       this.props.players.map((player) => {
@@ -66,6 +68,7 @@ class TeamCard extends Component {
       })
      }
     </FlipMove>
+    </div>
     )
   }
 }

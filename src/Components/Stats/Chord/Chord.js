@@ -38,9 +38,9 @@ class Chord extends Component {
         matrix={this.getChordData()}
         keys={this.getKeys()}
         margin={{
-            "top": 70,
-            "right": 80,
-            "bottom": 140,
+            "top": 160,
+            "right": 160,
+            "bottom": 160,
             "left": 220
         }}
         padAngle={0.02}
@@ -71,7 +71,7 @@ class Chord extends Component {
                 anchor: "top-left",
                 direction: "column",
                 translateX: -220,
-                translateY: 0,
+                translateY: -100,
                 itemWidth: 80,
                 itemHeight: 20,
                 symbolSize: 12,

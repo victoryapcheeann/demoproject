@@ -4,18 +4,24 @@
 }
 
 .chartContainer {
-    height: 700px;
-    width: 600px;
+    height: 600px;
+    width: 1000px;
     color: black;
     font-size: 12px;
-    background-color:white;
+    background-image: linear-gradient(to top, #fae8c2 0%, #ffffff 100%);
     border-radius: 5px;
     margin: 30px;
-    padding:20px;
+    padding: 50px;
+    box-shadow: 0 4px  4px  rgb(255, 255, 255, 1),
+    0 1px  6px  rgba(255, 255, 255, 1),
+    0 8px  8px  rgba(255, 255, 255, .5),
+    0 16px 16px rgba(255, 255, 255, .5),
+    8px 32px 32px rgba(255, 255, 255, .1),
+    8px 64px 64px rgba(255, 255, 255,.1);
 }
 
 .chartContainer2 {
-    height: 700px;
+    height: 1000px;
     width: 1000px;
     color: black;
     font-size: 12px;
