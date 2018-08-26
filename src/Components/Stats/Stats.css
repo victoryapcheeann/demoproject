@@ -19,7 +19,7 @@
     width: 1000px;
     color: black;
     font-size: 12px;
-    background-color:white;
+    background-image: linear-gradient(to top, #fae8c2 0%, #ffffff 100%);
     border-radius: 5px;
     margin: 30px;
     padding: 50px;

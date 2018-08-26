@@ -11,10 +11,32 @@ class Chord extends Component {
         return(keys);
     };
 
+    getChordData() {
+        if (this.props.players.length > 0) {
+            let teamArray = this.props.players.map(function(value){
+                return value.ID
+            });  
+
+            let chemistryArray = this.props.players.map(function(value){
+                return _(value.Chemistry).keyBy('ID').at(teamArray).value();
+            });  
+
+            let chordData = chemistryArray.map(function(value){
+                return value.map(function(nested){
+                    return nested.ChemistryPoint
+                })
+            }); 
+            return(chordData)
+        }
+        else {
+            return([])
+        }
+    }
+
     render() {
       return (
         <ResponsiveChord
-        matrix={data}
+        matrix={this.getChordData()}
         keys={this.getKeys()}
         margin={{
             "top": 120,
@@ -36,7 +58,7 @@ class Chord extends Component {
         labelOffset={12}
         labelRotation={-90}
         labelTextColor="inherit:darker(1)"
-        colors="nivo"
+        colors="paired"
         isInteractive={true}
         arcHoverOpacity={1}
         arcHoverOthersOpacity={0.25}

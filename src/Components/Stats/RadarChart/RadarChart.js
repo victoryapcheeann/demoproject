@@ -75,7 +75,6 @@ class RadarChart extends Component {
                 "left": 220
             }}
             curve="catmullRomClosed"
-            colors="inherit"
             borderWidth={2}
             borderColor="inherit"
             gridLevels={2}
