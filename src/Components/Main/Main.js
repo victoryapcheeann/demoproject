@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Logo from '../Logo/Logo';
+import Logo from './Logo/Logo';
 import './Main.css';
 import './Scroll.css';
 import './MainAnimation';
 import scrollToComponent from 'react-scroll-to-component';
 import ParticleEffect from 'react-particle-effect-button'
-import PlayerCard from '../PlayerCard/PlayerCard';
-import TeamCard from '../TeamCard/TeamCard';
+import PlayerCard from '../Card/PlayerCard/PlayerCard';
+import TeamCard from '../Card/TeamCard/TeamCard';
 import Stats from '../Chart/Chart';
 import Fade from 'react-reveal/Fade';
 

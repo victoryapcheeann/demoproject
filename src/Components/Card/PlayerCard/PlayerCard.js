@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import './PlayerCard.css';
 import { connect } from "react-redux";
 import GIFButton from '../GIFButton/GIFButton'
-import { addPlayer } from '../../actions';
+import { addPlayer } from '../../../actions';
 import FlipMove from 'react-flip-move';
-import ClickBurst from '../ClickBurst/ClickBurst'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AnimateOnChange from 'react-animate-on-change'
+import AnimateOnChange from 'react-animate-on-change';
 
 class PlayerCard extends Component {
   addPlayer(player) {
@@ -95,11 +94,10 @@ class PlayerCard extends Component {
                         <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove}/>
                         <div className="playerSpecialMoveText">Special Move</div>            
                       </div>
-                    <ClickBurst color="#FF0066">
-                      <button className="playerAddButton" onClick={()=>this.addPlayer(player)}>
+                      
+                      <button className="playerAddButton" onClick={()=>(this.addPlayer(player),this._play)}>
                           <span>Add player</span>
                       </button>
-                    </ClickBurst>
                   </div>
                 </div>         
             );

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import { ResponsiveChord } from '@nivo/chord'
-import _ from 'lodash';
 import { getKeys, getChordData } from '../Utility';
 
 class Chord extends Component {
