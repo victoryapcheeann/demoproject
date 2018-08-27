@@ -29,6 +29,30 @@ export function getChordData(data) {
     }
 }
 
+export function getChemistryScore(data) {
+    let chemistryScore = 0;
+
+    if (data.length > 0) {
+        let currentTeam = data.map(function(value){
+            return value.ID
+        });  
+
+        let chemistryList = data.map(function(value){
+            return _(value.Chemistry).keyBy('ID').at(currentTeam).value();
+        });  
+
+        chemistryList.map(function(value){
+            return value.map(function(nested){
+                chemistryScore = chemistryScore + nested.ChemistryPoint
+            })
+        }); 
+        return(chemistryScore)
+    }
+    else {
+        return("Add Player Please")
+    }
+}
+
 export function getRadarData(data) {
     if (data.length > 0) {
         let radarDataContainer = [];
