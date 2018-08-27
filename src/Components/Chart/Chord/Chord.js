@@ -1,42 +1,14 @@
 import React, {Component} from 'react'
 import { ResponsiveChord } from '@nivo/chord'
 import _ from 'lodash';
+import { getKeys, getChordData } from '../Utility';
 
 class Chord extends Component {
-    getKeys() {    
-        let keys = this.props.players.map(function(value){
-            return value.Name
-        });
-        return(keys);
-    };
-
-    getChordData() {
-        if (this.props.players.length > 1) {
-            let teamArray = this.props.players.map(function(value){
-                return value.ID
-            });  
-
-            let chemistryArray = this.props.players.map(function(value){
-                return _(value.Chemistry).keyBy('ID').at(teamArray).value();
-            });  
-
-            let chordData = chemistryArray.map(function(value){
-                return value.map(function(nested){
-                    return nested.ChemistryPoint
-                })
-            }); 
-            return(chordData)
-        }
-        else {
-            return([])
-        }
-    }
-
     render() {
       return (
         <ResponsiveChord
-        matrix={this.getChordData()}
-        keys={this.getKeys()}
+        matrix={getChordData(this.props.players)}
+        keys={getKeys(this.props.players)}
         margin={{
             "top": 160,
             "right": 160,

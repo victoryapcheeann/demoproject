@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './Stats.css';
+import './Chart.css';
 import { connect } from "react-redux";
 import RadarChart from "./RadarChart/RadarChart";
 import Chord from "./Chord/Chord";
 import _ from 'lodash';
 
-class Stats extends Component {
+class Chart extends Component {
     getChemistryScore() {
       let chemistryScore = 0;
 
@@ -61,5 +61,5 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, null)(Stats);
+export default connect(mapStateToProps, null)(Chart);
 

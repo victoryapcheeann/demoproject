@@ -7,7 +7,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import ParticleEffect from 'react-particle-effect-button'
 import PlayerCard from '../PlayerCard/PlayerCard';
 import TeamCard from '../TeamCard/TeamCard';
-import Stats from '../Stats/Stats';
+import Stats from '../Chart/Chart';
 import Fade from 'react-reveal/Fade';
 
 class Main extends Component {
