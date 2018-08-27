@@ -36,7 +36,15 @@ function backgroundAnimation (particleSize = 2, particleCount = 800, W = window.
           rx:0,
           ry:0
         };
+        var context = canvas.getContext('2d');
         
+        var imageObj = new Image();
+  
+        imageObj.onload = function() {
+          context.drawImage(imageObj, 69, 50);
+        };
+        imageObj.src = 'https://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+       
     var counter = 0;
                 
     function randomNorm(mean, stdev) {

@@ -44,8 +44,10 @@ class Main extends Component {
     <div>
         <div>
             <div>
-            <Fade duration={4000}>
-               <canvas id = "canvasTwo" className="particleContainer backgroundImage"></canvas>
+            <Fade duration={10000}>
+               <canvas id = "canvasTwo" width="0" height="0" className="particleContainer backgroundImage">
+                    Your browser does not support this feature.
+               </canvas>
             </Fade>
                 <div className="mainContainer columnStyle">
                     <div className="headerStyle rowStyle">
@@ -57,8 +59,7 @@ class Main extends Component {
                                 <span className = "nep-highlight">FIFA FANTASY</span>
                             </div>
                         </Fade>
-                    </div>
-                    
+                    </div>                   
                     <div className="introContainer mainTitleStyle">   
                       <Fade top duration={2000}>                 
                             <span>Your dream team</span>
