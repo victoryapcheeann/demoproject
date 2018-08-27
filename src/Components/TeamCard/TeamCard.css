@@ -10,10 +10,10 @@
     align-items: center;
     box-shadow: 0 4px  4px  rgb(255, 127, 127, 1),
     0 1px  6px  rgba(255, 127, 127, 1),
-    0 8px  8px  rgba(255, 127, 127, .4),
-    0 16px 16px rgba(255, 127, 127, .2),
-    8px 32px 32px rgba(255, 127, 127, .1),
-    8px 64px 64px rgba(255, 127, 127,.1);
+    0 8px  8px  rgba(255, 127, 127, .01),
+    0 16px 16px rgba(255, 127, 127, .01),
+    8px 32px 32px rgba(255, 127, 127, .01),
+    8px 64px 64px rgba(255, 127, 127,.01);
 }
 
 .playerTeamSubContainer {
