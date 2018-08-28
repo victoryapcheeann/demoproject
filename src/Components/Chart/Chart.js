@@ -3,7 +3,6 @@ import './Chart.css';
 import { connect } from "react-redux";
 import RadarChart from "./RadarChart/RadarChart";
 import Chord from "./Chord/Chord";
-import _ from 'lodash';
 import { getChemistryScore } from './Utility.js';
 
 class Chart extends Component {
