@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import { ResponsiveRadar } from '@nivo/radar';
-import { getKeys, getRadarData } from '../Utility';
+import { getKeysForName, getRadarData } from '../Utility';
 
 class RadarChart extends Component {
     render() {
       return (
         <ResponsiveRadar    
             data={getRadarData(this.props.players)}
-            keys={getKeys(this.props.players)}
+            keys={getKeysForName(this.props.players)}
             indexBy="attribute"
             maxValue="auto"
             margin={{
