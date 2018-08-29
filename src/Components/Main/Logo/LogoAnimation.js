@@ -1,25 +1,8 @@
-window.addEventListener("load", windowLoadHandler, false);
-var sphereRad = 100;
-var radius_sp=0.4;
-//for debug messages
-var Debugger = function() { };
-Debugger.log = function(message) {
-	try {
-		console.log(message);
-	}
-	catch (exception) {
-		return;
-	}
-}
-
-function windowLoadHandler() {
-	canvasApp();
-}
-
-function canvasApp() {	
+export function logoAnimation() {	
 	var theCanvas = document.getElementById("canvasOne");
 	var context = theCanvas.getContext("2d");
-	
+	var sphereRad = 100;
+	var radius_sp=0.4;
 	var displayWidth;
 	var displayHeight;
 	var timer;

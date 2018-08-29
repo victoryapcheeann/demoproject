@@ -1,23 +1,4 @@
-window.addEventListener("load", windowLoadHandler, false);
-var sphereRad = 75;
-var radius_sp=0.5;
-//for debug messages
-var Debugger = function() { };
-Debugger.log = function(message) {
-	try {
-		console.log(message);
-	}
-	catch (exception) {
-		return;
-	}
-}
-
-function windowLoadHandler() {
-    backgroundAnimation();
-}
-
-function backgroundAnimation (particleSize = 2, particleCount = 800, W = window.innerWidth, H = window.innerHeight) {
-
+export function backgroundAnimation (particleSize = 2, particleCount = 800, W = window.innerWidth, H = window.innerHeight) {
     var W, H, canvas, ctx, particles = [];
     
         W = W
@@ -164,7 +145,6 @@ function backgroundAnimation (particleSize = 2, particleCount = 800, W = window.
     
         function animateParticles() {
             clearCanvas();
-            setDelta();
             update()
             drawParticles();
             updateParticles();
@@ -174,11 +154,6 @@ function backgroundAnimation (particleSize = 2, particleCount = 800, W = window.
         initParticleSystem();
         requestAnimationFrame(animateParticles);
       
-        function setDelta() {  
-          this.now    =   (new Date()).getTime();  
-          mouse.delta  =   (this.now-this.then)/1000;  
-          this.then   =   this.now;  
-        }
         function update() {  
      
         if(isNaN(mouse.delta) || mouse.delta <= 0) { return; }  

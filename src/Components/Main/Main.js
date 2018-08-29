@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Logo from './Logo/Logo';
+import Background from './Background/Background';
 import './Main.css';
 import './Scroll.css';
-import './MainAnimation';
 import scrollToComponent from 'react-scroll-to-component';
 import ParticleEffect from 'react-particle-effect-button'
 import PlayerCard from '../Card/PlayerCard/PlayerCard';
@@ -45,9 +45,7 @@ class Main extends Component {
         <div>
             <div>
             <Fade duration={10000}>
-               <canvas id = "canvasTwo" width="0" height="0" className="particleContainer backgroundImage">
-                    Your browser does not support this feature.
-               </canvas>
+                <Background />
             </Fade>
                 <div className="mainContainer columnStyle">
                     <div className="headerStyle rowStyle">
