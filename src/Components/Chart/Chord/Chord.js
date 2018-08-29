@@ -1,13 +1,12 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { ResponsiveChord } from '@nivo/chord'
 import { getKeysForName, getChordData } from '../Utility';
 
-class Chord extends Component {
-    render() {
+const Chord = (props) => {
       return (
         <ResponsiveChord
-        matrix={getChordData(this.props.players)}
-        keys={getKeysForName(this.props.players)}
+        matrix={getChordData(props.players)}
+        keys={getKeysForName(props.players)}
         margin={{
             "top": 160,
             "right": 160,
@@ -51,7 +50,7 @@ class Chord extends Component {
         ]}
     />
     )
-    }
 }
+
 
 export default Chord

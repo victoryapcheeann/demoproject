@@ -73,7 +73,8 @@ class PlayerCard extends Component {
                         <span className="playerDescriptionDetails">{player.Role}</span>
                         </span>
                       <div className="playerHorizontalLine"></div>
-                    </div>     
+                    </div>    
+                    <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove} textStyle={"playerSpecialMoveText"}/>
                     <div className="playerAttributeContainer rowStyle">
                         <div className="columnStyle playerAttributeTitle">
                           <span>Strength</span>
@@ -89,12 +90,7 @@ class PlayerCard extends Component {
                           <span>{player.Strategy}</span>
                           <span>{player.Popularity}</span>
                         </div>
-                    </div>
-                    <div className="playerGifContainer">
-                        <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove}/>
-                        <div className="playerSpecialMoveText">Special Move</div>            
-                      </div>
-                      
+                    </div>    
                       <button className="playerAddButton" onClick={()=>(this.addPlayer(player))}>
                           <span>Add player</span>
                       </button>

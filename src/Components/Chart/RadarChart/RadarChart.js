@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import { ResponsiveRadar } from '@nivo/radar';
 import { getKeysForName, getRadarData } from '../Utility';
 
-class RadarChart extends Component {
-    render() {
+const RadarChart = (props) => {
       return (
         <ResponsiveRadar    
-            data={getRadarData(this.props.players)}
-            keys={getKeysForName(this.props.players)}
+            data={getRadarData(props.players)}
+            keys={getKeysForName(props.players)}
             indexBy="attribute"
             maxValue="auto"
             margin={{
@@ -51,7 +50,7 @@ class RadarChart extends Component {
             ]}
         />
     )
-    }
 }
+
 
 export default RadarChart

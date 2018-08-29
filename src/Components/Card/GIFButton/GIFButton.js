@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './GIFButton.css';
 
-class GIFButton extends Component {
-  render() {
+const GIFButton = (props) => {
     return (
-        <div>
+        <div className="playerGifContainer">
             <div className="Project">
-              <img src={this.props.GIF} alt="" className="imgMasked" />
+              <img src={props.GIF} alt="" className="imgMasked" />
               <div className="Project-hail"></div>
               <div className="Project-hail2"></div>
-              <p className="Project-name">Special Move: <br/>{this.props.SpecialMove}</p>
+              <p className="Project-name">Special Move: <br/>{props.SpecialMove}</p>
             </div>
-        </div>
+            <div className={props.textStyle}>Special Move</div>            
+        </div> 
     );
   }
-}
 
 export default GIFButton;

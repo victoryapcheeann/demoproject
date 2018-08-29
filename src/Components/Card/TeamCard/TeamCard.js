@@ -36,6 +36,7 @@ class TeamCard extends Component {
                 </span>
               <div className="playerTeamHorizontalLine"></div>
             </div>     
+            <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove} textStyle={"playerTeamSpecialMoveText"}/>
             <div className="playerTeamAttributeContainer rowStyle">
                 <div className="columnStyle playerTeamAttributeTitle">
                   <span>Strength</span>
@@ -52,10 +53,7 @@ class TeamCard extends Component {
                     <span>{player.Popularity}</span>
                 </div>
             </div>
-            <div className="playerTeamGifContainer">
-                <GIFButton GIF={player.GIF} SpecialMove={player.SpecialMove}/>
-                <div className="playerTeamSpecialMoveText">Special Move</div>  
-              </div>
+                
               <button className="playerTeamRemoveButton" onClick={()=>this.removePlayer(player)}>
                   <span>Remove Player</span>
               </button>

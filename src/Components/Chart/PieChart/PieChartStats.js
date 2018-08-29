@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { ResponsivePie } from '@nivo/pie'
 import { getPieDataForStats } from '../Utility';
 
-class PieChartStats extends Component {
-    render() {
+const PieChartStats = (props) => {
       return (
         <ResponsivePie
-        data={getPieDataForStats(this.props.players)}
+        data={getPieDataForStats(props.players)}
         margin={{
             "top": 40,
             "right": 80,
@@ -99,7 +98,7 @@ class PieChartStats extends Component {
         ]}
     />
     )
-    }
 }
+
 
 export default PieChartStats

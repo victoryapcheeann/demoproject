@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import './Main.css';
-
-import ParticleEffect from 'react-particle-effect-button';
 import scrollToComponent from 'react-scroll-to-component';
+import Fade from 'react-reveal/Fade';
 
 import Logo from './Logo/Logo';
 import Background from './Background/Background';
-
 import ParticleScroll from './ParticleScroll/ParticleScroll';
 import PlayerCard from '../Card/PlayerCard/PlayerCard';
 import TeamCard from '../Card/TeamCard/TeamCard';
 import Stats from '../Chart/Chart';
-import Fade from 'react-reveal/Fade';
+
 
 class Main extends Component {
      scrollFunction =  () => {
@@ -40,14 +38,14 @@ class Main extends Component {
                     <div className="introContainer mainTitleStyle">   
                       <Fade top duration={2000}>                 
                             <span>Your dream team</span>
-                            <br/>
-                            <br/>
+                                <br/>
+                                <br/>
                             <span>3 simple steps</span>
-                            <br/>
-                            <br/>
+                                <br/>
+                                <br/>
                             <span>Let's begin</span>  
                             <ParticleScroll passedFunction={this.scrollFunction}/>
-                    </Fade>
+                      </Fade>
                         </div> 
                     </div> 
                 </div>
@@ -60,9 +58,9 @@ class Main extends Component {
                         </div>
                     </div>
                  <div className="sectionContainer teamSectionContainer">
-                        <div className="rowStyle">
+                    <div className="rowStyle">
                         <TeamCard/>
-                        </div>
+                    </div>
                  </div>
                  <div className="sectionContainer statisticsSectionContainer">
                      <Stats/>

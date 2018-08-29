@@ -111,24 +111,6 @@
     line-height: 15px
 }
 
-.playerSpecialMoveText {
-    font-size: 9px;
-    text-shadow: 0 0 10px #D4FFEC;
-    color: #D4FFEC;
-    text-shadow: 0 0 10px white;
-    margin-left: 10px;
-}
-
-.playerGifContainer {
-    margin: 7.5px;
-    width: 110px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
-}
-
 /*Card Animation*/
 .background-enter {
     transform: translate(100%);

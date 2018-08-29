@@ -111,19 +111,3 @@
     line-height: 15px
 }
 
-.playerTeamSpecialMoveText {
-    font-size: 9px;
-    text-shadow: 0 0 10px rgb(255, 212, 212);
-    color: rgb(255, 212, 212);
-    margin-left: 10px;
-}
-
-.playerTeamGifContainer {
-    margin: 7.5px;
-    width: 110px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
-}
