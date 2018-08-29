@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {  logoAnimation } from './LogoAnimation';
+import { logoAnimation } from './LogoAnimation';
 
 class Logo extends Component {
    componentDidMount() {
-    logoAnimation();
+      logoAnimation();
     }
 
   render() {

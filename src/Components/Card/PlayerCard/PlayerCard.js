@@ -95,7 +95,7 @@ class PlayerCard extends Component {
                         <div className="playerSpecialMoveText">Special Move</div>            
                       </div>
                       
-                      <button className="playerAddButton" onClick={()=>(this.addPlayer(player),this._play)}>
+                      <button className="playerAddButton" onClick={()=>(this.addPlayer(player))}>
                           <span>Add player</span>
                       </button>
                   </div>
