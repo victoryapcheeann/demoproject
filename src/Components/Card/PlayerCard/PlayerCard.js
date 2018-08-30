@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
 import './PlayerCard.css';
 import { connect } from "react-redux";
-import GIFButton from '../GIFButton/GIFButton'
 import { addPlayer } from '../../../actions';
+import GIFButton from '../GIFButton/GIFButton';
 import FlipMove from 'react-flip-move';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AnimateOnChange from 'react-animate-on-change';
+import SearchInput, {createFilter} from 'react-search-input'
+
+const KEYS_TO_FILTERS = ['Name', 'Team', 'Role', 'SpecialMove']
 
 class PlayerCard extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      searchTerm: ''
+    }
+    this.searchUpdated = this.searchUpdated.bind(this)
+  }
+
+  searchUpdated (term) {
+    this.setState({searchTerm: term})
+  }
+
   addPlayer(player) {
     if (this.props.teamPlayers.length < 11) {
       this.props.addPlayer(player);
@@ -27,6 +42,8 @@ class PlayerCard extends Component {
   }
 
   render() {
+    const filteredPlayers = this.props.players.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
+
     return (
       <div>
       <ToastContainer
@@ -49,10 +66,11 @@ class PlayerCard extends Component {
           <span>{this.props.teamPlayers.length}</span>
         </AnimateOnChange>
         <span>/11</span>
+         <SearchInput className="search-input" onChange={this.searchUpdated} />
       </div>
       <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" className="rowStyle">
         {
-        this.props.players.map((player) => {
+        filteredPlayers.map((player) => {
             return ( 
                 <div key={player.ID} className = "playerContainer columnStyle">
                   <div className= "playerSubContainer columnStyle">
