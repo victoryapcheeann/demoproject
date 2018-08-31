@@ -32,7 +32,7 @@ class Chart extends Component {
           </div>
           <div className="mainChartContainer rowStyle">
               <div className="chartContainer containerShadow">
-                  <span className="chartHeader">Team Stats</span>
+                  <span className="chartHeader">Team Stats Breakdown</span>
                   <RadarChart players={this.props.players}/>
               </div>
           </div>

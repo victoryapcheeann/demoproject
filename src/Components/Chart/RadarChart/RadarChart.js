@@ -11,9 +11,9 @@ const RadarChart = (props) => {
             maxValue="auto"
             margin={{
                 "top": 30,
-                "right": 30,
+                "right": 100,
                 "bottom": 30,
-                "left": 30
+                "left": 100
             }}
             curve="catmullRomClosed"
             borderWidth={2}
