@@ -28,7 +28,7 @@ export function getChordData(data) {
         return[chordData, chemistryScore]
     }
     else {
-        return[[], "Please add players"]
+        return[[], "(Please add player to see score)"]
     }
 }
 
@@ -37,7 +37,7 @@ export function getRadarData(data) {
         let radarDataContainer = [];
         let attributeContainer = ["Strength", "Agility", "Intelligence", "Strategy", "Popularity"]
 
-            for(let i = 0; i < attributeContainer.length; i++) {
+        for(let i = 0; i < attributeContainer.length; i++) {
             let radarArray = data.map(function(value){
                 return {key: value.Name, value: value[attributeContainer[i]]}
             });            
@@ -53,63 +53,29 @@ export function getRadarData(data) {
     }
 }
 
-export function getPieDataForStats(data) {
+export function getPieData(data) {
     if (data.length > 0) {
         let pieDataContainer = [];
+        let attributeContainer = ["Strength", "Agility", "Intelligence", "Strategy", "Popularity"]
+        let colorContainer = ["hsl(29, 70%, 50%)", "hsl(339, 70%, 50%)", "hsl(259, 70%, 50%)", "hsl(94, 70%, 50%)", "hsl(146, 70%, 50%)"]
+        let totalScore = 0;
 
-            let strengthScore = 0
-            data.map(function(value){strengthScore = strengthScore + value.Strength});            
-            let strengthID = {"id": "strength"}
-            let strengthLabel = {"label": "strength"}
-            let strengthValue = {"value": strengthScore }
-            let strengthColor = {"color": "hsl(29, 70%, 50%)"}
-            let strengthPieData = _.merge(
-                strengthID, strengthLabel, strengthValue, strengthColor);
-            pieDataContainer.push(strengthPieData);
-            
-            let agilityScore = 0
-            data.map(function(value){agilityScore = agilityScore + value.Agility});            
-            let agilityID = {"id": "agility"}
-            let agilityLabel = {"label": "agility"}
-            let agilityValue = {"value": agilityScore }
-            let agilityColor = {"color": "hsl(339, 70%, 50%)"}
-            let agilityPieData = _.merge(
-                agilityID, agilityLabel, agilityValue, agilityColor);
-            pieDataContainer.push(agilityPieData);
-            
-            let intelligenceScore = 0
-            data.map(function(value){intelligenceScore = intelligenceScore + value.Intelligence});            
-            let intelligenceID = {"id": "intelligence"}
-            let intelligenceLabel = {"label": "intelligence"}
-            let intelligenceValue = {"value": intelligenceScore }
-            let intelligenceColor = {"color": "hsl(259, 70%, 50%)"}
-            let intelligencePieData = _.merge(
-                intelligenceID, intelligenceLabel, intelligenceValue, intelligenceColor);
-            pieDataContainer.push(intelligencePieData);
-
-            let strategyScore = 0
-            data.map(function(value){strategyScore = strategyScore + value.Strategy});            
-            let strategyID = {"id": "strategy"}
-            let strategyLabel = {"label": "strategy"}
-            let strategyValue = {"value": strategyScore }
-            let strategyColor = {"color": "hsl(94, 70%, 50%)"}
-            let strategyPieData = _.merge(
-                strategyID, strategyLabel, strategyValue, strategyColor);
-            pieDataContainer.push(strategyPieData);
-
-            let popularityScore = 0
-            data.map(function(value){popularityScore = popularityScore + value.Popularity});            
-            let popularityID = {"id": "popularity"}
-            let popularityLabel = {"label": "popularity"}
-            let popularityValue = {"value": popularityScore }
-            let popularityColor = {"color": "hsl(146, 70%, 50%)"}
-            let popularityPieData = _.merge(
-                popularityID, popularityLabel, popularityValue, popularityColor);
-            pieDataContainer.push(popularityPieData);
-  
-        return(pieDataContainer)
+            for(let i=0; i<attributeContainer.length; i++){
+                let Score = 0
+                data.map(function(value){Score = Score + value[attributeContainer[i]]});            
+                let pieID = {"id": attributeContainer[i]}
+                let pieLabel = {"label": attributeContainer[i]}
+                let pieValue = {"value": Score }
+                let pieColor = {"color": colorContainer[i]}
+                let pieData = _.merge(
+                    pieID, pieLabel, pieValue, pieColor);
+                pieDataContainer.push(pieData);
+                totalScore += Score
+            }
+          
+        return[pieDataContainer, totalScore]
     }
     else {
-        return([])
+        return[[], 0]
     }
 }

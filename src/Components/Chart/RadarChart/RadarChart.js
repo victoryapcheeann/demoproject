@@ -10,10 +10,10 @@ const RadarChart = (props) => {
             indexBy="attribute"
             maxValue="auto"
             margin={{
-                "top": 70,
-                "right": 80,
-                "bottom": 40,
-                "left": 220
+                "top": 30,
+                "right": 30,
+                "bottom": 30,
+                "left": 30
             }}
             curve="catmullRomClosed"
             borderWidth={2}
@@ -36,18 +36,6 @@ const RadarChart = (props) => {
             motionStiffness={90}
             motionDamping={15}
             isInteractive={true}
-            legends={[
-                {
-                    anchor: "top-left",
-                    direction: "column",
-                    translateX: -220,
-                    translateY: 0,
-                    itemWidth: 80,
-                    itemHeight: 20,
-                    symbolSize: 12,
-                    symbolShape: "circle"
-                }
-            ]}
         />
     )
 }
