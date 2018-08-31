@@ -8,6 +8,8 @@ export function getKeysForName(data) {
 };
 
 export function getChordData(data) {
+    let chemistryScore = 0;
+
     if (data.length > 1) {
         let teamArray = data.map(function(value){
             return value.ID
@@ -19,37 +21,14 @@ export function getChordData(data) {
 
         let chordData = chemistryArray.map(function(value){
             return value.map(function(nested){
+                chemistryScore = chemistryScore + nested.ChemistryPoint
                 return nested.ChemistryPoint
             })
         }); 
-        return(chordData)
+        return[chordData, chemistryScore]
     }
     else {
-        return([])
-    }
-}
-
-export function getChemistryScore(data) {
-    let chemistryScore = 0;
-
-    if (data.length > 0) {
-        let currentTeam = data.map(function(value){
-            return value.ID
-        });  
-
-        let chemistryList = data.map(function(value){
-            return _(value.Chemistry).keyBy('ID').at(currentTeam).value();
-        });  
-
-        chemistryList.map(function(value){
-            return value.map(function(nested){
-                chemistryScore = chemistryScore + nested.ChemistryPoint
-            })
-        }); 
-        return(chemistryScore)
-    }
-    else {
-        return("Add Player Please")
+        return[[], "Please add players"]
     }
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Chart.css';
 import { connect } from "react-redux";
-import { getChemistryScore } from './Utility.js';
+import { getChordData } from './Utility.js';
 import RadarChart from "./RadarChart/RadarChart";
 import Chord from "./Chord/Chord";
 import PieChartStats from "./PieChart/PieChartStats";
@@ -9,6 +9,8 @@ import PieChartStats from "./PieChart/PieChartStats";
 
 class Chart extends Component {
   render() {
+    let chemistryScore = getChordData(this.props.players)
+    
     return (
       <div>
         <span className="mainTitleStyle">Step 3: statistics</span>
@@ -29,7 +31,7 @@ class Chart extends Component {
                 <div className="columnStyle">
                   <span className="chartHeader">Team Chemistry</span>
                   <br/>
-                  <span className="scoreHeader">Score: {getChemistryScore(this.props.players)}</span>
+                  <span className="scoreHeader">Score: {chemistryScore[1]}</span>
                 </div>
                 <Chord players={this.props.players}/>
             </div>

@@ -71,7 +71,7 @@ class PlayerCard extends Component {
         <div className="rowStyle">
         <div className="tooltip">
           <FaInfoCircle/>
-          <span class="tooltiptext">You can search via player name, <br/> team, position and special move</span>
+          <span className="tooltiptext">You can search via player name, <br/> team, position and special move</span>
         </div>
           <SearchInput className="search-input" onChange={this.searchUpdated} placeholder="Search"/>
         </div>

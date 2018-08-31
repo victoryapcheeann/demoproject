@@ -3,9 +3,11 @@ import { ResponsiveChord } from '@nivo/chord'
 import { getKeysForName, getChordData } from '../Utility';
 
 const Chord = (props) => {
+      let chordData = getChordData(props.players)
+
       return (
         <ResponsiveChord
-        matrix={getChordData(props.players)}
+        matrix={chordData[0]}
         keys={getKeysForName(props.players)}
         margin={{
             "top": 160,
