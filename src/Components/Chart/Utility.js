@@ -35,46 +35,17 @@ export function getChordData(data) {
 export function getRadarData(data) {
     if (data.length > 0) {
         let radarDataContainer = [];
+        let attributeContainer = ["Strength", "Agility", "Intelligence", "Strategy", "Popularity"]
 
-            let strengthArray = data.map(function(value){
-                return {key: value.Name, value: value.Strength}
+            for(let i = 0; i < attributeContainer.length; i++) {
+            let radarArray = data.map(function(value){
+                return {key: value.Name, value: value[attributeContainer[i]]}
             });            
-            let strengthData = _.chain(strengthArray).keyBy('key').mapValues('value').value();
-            let strengthHeader = {"attribute": "strength"}
-            let strengthCombined = _.merge(strengthHeader, strengthData);
-            radarDataContainer.push(strengthCombined);
-
-            let agilityArray = data.map(function(value){
-                return {key: value.Name, value: value.Agility}
-            });            
-            let agilityData = _.chain(agilityArray).keyBy('key').mapValues('value').value();
-            let agilityHeader = {"attribute": "agility"}
-            let agilityCombined = _.merge(agilityHeader, agilityData);
-            radarDataContainer.push(agilityCombined);
-
-            let intelligenceArray = data.map(function(value){
-                return {key: value.Name, value: value.Intelligence}
-            });            
-            let intelligenceData = _.chain(intelligenceArray).keyBy('key').mapValues('value').value();
-            let intelligenceHeader = {"attribute": "intelligence"}
-            let intelligenceCombined = _.merge(intelligenceHeader, intelligenceData);
-            radarDataContainer.push(intelligenceCombined);
-            
-            let strategyArray = data.map(function(value){
-                return {key: value.Name, value: value.Strategy}
-            });            
-            let strategyData = _.chain(strategyArray).keyBy('key').mapValues('value').value();
-            let strategyHeader = {"attribute": "strategy"}
-            let strategyCombined = _.merge(strategyHeader, strategyData);
-            radarDataContainer.push(strategyCombined);
-
-            let popularityArray = data.map(function(value){
-                return {key: value.Name, value: value.Popularity}
-            });            
-            let popularityData = _.chain(popularityArray).keyBy('key').mapValues('value').value();
-            let popularityHeader = {"attribute": "popularity"}
-            let popularityCombined = _.merge(popularityHeader, popularityData);
-            radarDataContainer.push(popularityCombined);
+            let radarData = _.chain(radarArray).keyBy('key').mapValues('value').value();
+            let radarHeader = {"attribute": attributeContainer[i]}
+            let radarCombined = _.merge(radarHeader, radarData);
+            radarDataContainer.push(radarCombined);
+        }
             return(radarDataContainer);
     }
     else {
@@ -136,7 +107,6 @@ export function getPieDataForStats(data) {
                 popularityID, popularityLabel, popularityValue, popularityColor);
             pieDataContainer.push(popularityPieData);
   
-            console.log(pieDataContainer)
         return(pieDataContainer)
     }
     else {
