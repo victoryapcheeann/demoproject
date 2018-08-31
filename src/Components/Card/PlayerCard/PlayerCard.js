@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AnimateOnChange from 'react-animate-on-change';
 import SearchInput, {createFilter} from 'react-search-input'
+import { FaInfoCircle } from "react-icons/fa";
 
 const KEYS_TO_FILTERS = ['Name', 'Team', 'Role', 'SpecialMove']
 
@@ -57,16 +58,23 @@ class PlayerCard extends Component {
         draggable
         pauseOnHover
       />
-      <div className="mainTitleStyle">
-        <span>Step 1: Choose your player      </span>
-        <AnimateOnChange
-          baseClassName="length" 
-          animationClassName="length-changed" 
-          animate={this.props.teamPlayers.length != 0}>
-          <span>{this.props.teamPlayers.length}</span>
-        </AnimateOnChange>
-        <span>/11</span>
-         <SearchInput className="search-input" onChange={this.searchUpdated} />
+      <div className="mainTitleStyle mainTitleContainer">
+        <span>Step 1: Choose your player      
+          <AnimateOnChange
+            baseClassName="length" 
+            animationClassName="length-changed" 
+            animate={this.props.teamPlayers.length != 0}>
+            <span> {this.props.teamPlayers.length}</span>
+          </AnimateOnChange>
+          <span>/11</span>
+        </span>
+        <div className="rowStyle">
+        <div className="tooltip">
+          <FaInfoCircle/>
+          <span class="tooltiptext">You can search via player name, <br/> team, position and special move</span>
+        </div>
+          <SearchInput className="search-input" onChange={this.searchUpdated} placeholder="Search"/>
+        </div>
       </div>
       <FlipMove enterAnimation="accordionHorizontal" leaveAnimation="accordionHorizontal" className="rowStyle">
         {
