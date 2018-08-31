@@ -20,7 +20,7 @@ class Chart extends Component {
     return (
       <div>
         <span className="mainTitleStyle">Step 3: statistics <br/><br/> Total Score: {totalScore}</span>
-        <div className="rowStyle"> 
+        <div className="mainChartContainer rowStyle"> 
           <div className="mainChartContainer rowStyle">
               <div className="chartContainer containerShadow">
                   <span className="chartHeader">Total Stats</span>
